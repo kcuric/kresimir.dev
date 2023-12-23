@@ -4,15 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>kresimir.dev</title>
+    <link rel="stylesheet" href="../static/css/style.css">
 </head>
 <body>
-    <h1>kresimir.dev</h1>
+    <header class="container">
+        <nav>
+            <h1>kresimir.dev</h1>
+        </nav>
+    </header>
 
-    {{ range .Films }}
+    <section class="container">
+        <p>
+            Hi there. I’m Krešimir, neighborhoods tech tinker and an audiophile.
+            If its 2am and one light remains in an apartment building that’s probably me trying to dial in a snare EQ or fix an ongoing production issue.
+        </p>
+    </section>
 
-        <p> {{ .Title }} => {{ .Director }}</p>
+    <section class="container">
+        <ul>
+            <li>Founder of Atekatu</li>
+            <li>Main developer of Astoru</li>
+        </ul>
+    </section>
 
-    {{ end }}
+    <div class="container">
+        <p class="separator">*****</p>
+    </div>
 
+    <section class="container post">
+        <h2 class="post-title">Domain Driven Design</h2>
+        <p class="post-date">23rd of December 2023</p>
+        <p class="post-description">
+            This is the second year I’m trying to get through Eric Evans “Domain Driven Design” book.
+            First time my focus dropped after two chapters.
+            This time I managed to get through it. This is my grain of salt on it.
+        </p>
+        <p class="post-button">Read more</p>
+    </section>
+
+    <footer class="container">
+        <p class="separator">*****</p>
+        <p>X</p>
+    </footer>
 </body>
 </html>

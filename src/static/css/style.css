@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'FiraCode';
+    src: url('../fonts/FiraCode-Regular.ttf');
+}
+
+body,html {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'FiraCode';
+    background-color: #1A1A1A;
+    color: #F8F8F8;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+h1 {
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: 0.875rem;
+}
+
+p, li {
+    font-size: 0.75rem;
+}
+
+.container {
+    width: 100%;
+    max-width: 45em;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+    text-align: justify;
+}
+
+.separator {
+    text-align: center;
+}
+
+.post:hover {
+    cursor: pointer;
+}
+
+.post-date {
+    color: #C5C5C5;
+    margin-top: 0;
+    font-size: 0.625rem;
+}
+
+.post-title {
+    margin-bottom: 0;
+}
+
+.post:hover > * {
+    text-decoration: underline;
+}
+
+.post:hover > .post-button {
+    color: #2288FF;
+}
+
+.post:hover > .post-title {
+    color: #2288FF;
+}
+
+footer {
+    margin-top: auto;
+}
