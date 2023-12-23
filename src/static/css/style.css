@@ -20,8 +20,14 @@ body{
     min-height: 100dvh;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+    text-decoration: inherit;
+}
+
 h1 {
-    font-size: 1rem;
+    font-size: 1.25rem;
 }
 
 h2 {

@@ -20,27 +20,22 @@
         </p>
     </section>
 
-    <section class="container">
-        <ul>
-            <li>Founder of Atekatu</li>
-            <li>Main developer of Astoru</li>
-        </ul>
-    </section>
-
     <div class="container">
         <p class="separator">*****</p>
     </div>
 
-    <section class="container post">
-        <h2 class="post-title">Domain Driven Design</h2>
-        <p class="post-date">23rd of December 2023</p>
-        <p class="post-description">
-            This is the second year I’m trying to get through Eric Evans “Domain Driven Design” book.
-            First time my focus dropped after two chapters.
-            This time I managed to get through it. This is my grain of salt on it.
-        </p>
-        <p class="post-button">Read more</p>
-    </section>
+    {{range .}}
+    <a href="/post/{{ .Slug }}">
+        <section class="container post">
+            <h2 class="post-title">{{ .Title }}</h2>
+            <p class="post-date">{{ .Date }}</p>
+            <p class="post-description">
+                {{ .Description }}
+            </p>
+            <p class="post-button">Read more</p>
+        </section>
+    </a>
+    {{ end }}
 
     <footer class="container">
         <p class="separator">*****</p>
