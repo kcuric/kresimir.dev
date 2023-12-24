@@ -3,12 +3,13 @@
     src: url('../fonts/FiraCode-Regular.ttf');
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body,html {
     margin: 0;
     padding: 0;
-}
-* {
-    box-sizing: border-box;
 }
 
 body{
@@ -94,4 +95,16 @@ header {
 footer {
     margin-top: auto;
     margin-bottom: 2rem;
+}
+
+.social {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    gap: 2rem;
 }

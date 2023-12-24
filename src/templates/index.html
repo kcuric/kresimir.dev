@@ -27,16 +27,7 @@
     </div>
 
     {{range .}}
-    <a href="/post/{{ .Slug }}">
-        <section class="container post">
-            <h2 class="post-title">{{ .Title }}</h2>
-            <p class="post-date">{{ .Date }}</p>
-            <p class="post-description">
-                {{ .Description }}
-            </p>
-            <p class="post-button">Read more</p>
-        </section>
-    </a>
+        {{ template "post" . }}
     {{ end }}
 
     {{ template "footer" . }}
