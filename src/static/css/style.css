@@ -20,6 +20,11 @@ body{
     min-height: 100dvh;
 }
 
+main {
+    margin-top: 2rem;
+    height: 100dvh;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -36,6 +41,11 @@ h2 {
 
 p, li {
     font-size: 0.75rem;
+}
+
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .container {
@@ -77,6 +87,11 @@ p, li {
     color: #2288FF;
 }
 
+header {
+    margin-top: 2rem;
+}
+
 footer {
     margin-top: auto;
+    margin-bottom: 2rem;
 }

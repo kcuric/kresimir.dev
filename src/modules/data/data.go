@@ -9,24 +9,9 @@ type Post struct {
 
 var Posts = []Post{
 	{
-		Title: "My approach to Nest.js",
-		Date:  "23rd of December 2023",
-		Slug:  "my-approach-to-nest-js",
-		Description: "As I've been using Nest.js for a few years now I noticed I introduce several simple patterns in " +
-			"all of my projects from the get go. Documenting them here, maybe you'll find them of interest.",
-	},
-	{
-		Title: "My approach to Nest.js",
-		Date:  "23rd of December 2023",
-		Slug:  "my-approach-to-nest-js",
-		Description: "As I've been using Nest.js for a few years now I noticed I introduce several simple patterns in " +
-			"all of my projects from the get go. Documenting them here, maybe you'll find them of interest.",
-	},
-	{
-		Title: "My approach to Nest.js",
-		Date:  "23rd of December 2023",
-		Slug:  "my-approach-to-nest-js",
-		Description: "As I've been using Nest.js for a few years now I noticed I introduce several simple patterns in " +
-			"all of my projects from the get go. Documenting them here, maybe you'll find them of interest.",
+		Title:       "Test post",
+		Date:        "24rd of December 2023",
+		Slug:        "test-post",
+		Description: "I'll start to add posts soon. Here's a placeholder for now!",
 	},
 }
