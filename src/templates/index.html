@@ -1,3 +1,4 @@
+{{ define "index" }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,10 +39,7 @@
     </a>
     {{ end }}
 
-    <footer class="container">
-        <p class="separator">*****</p>
-        <p>X</p>
-        <p>GitHub</p>
-    </footer>
+    {{ template "footer" . }}
 </body>
 </html>
+{{ end }}

@@ -22,22 +22,16 @@ type HandlerFunc func(http.ResponseWriter, *http.Request) error
 
 func MakeHandleFunc(f HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
-		defer func() {
-			if rec := recover(); rec != nil {
-				fmt.Println("Fatal error:", r)
-				http.Redirect(w, r, "/404", http.StatusSeeOther)
-			}
-		}()
-
 		if err := f(w, r); err != nil {
-			log.Fatal(err)
+			http.Redirect(w, r, "/404", http.StatusSeeOther)
 		}
 	}
 }
 
 func (server *Server) Listen() {
 	fs := http.FileServer(http.Dir("./static"))
+	templater.ParseTemplates()
+
 	http.Handle("/static/", http.StripPrefix("/static/", fs))
 
 	// TODO: this router is hacky, especially 404 handling
@@ -50,20 +44,21 @@ func (server *Server) Listen() {
 
 func (server *Server) handleNotFound(w http.ResponseWriter, r *http.Request) error {
 	log.Println("Processing get /404.html request.")
-	return templater.GenerateTemplate(w, "/404.html", nil)
+	return templater.GenerateTemplate(w, "404", nil)
 }
 
 func (server *Server) handleIndex(w http.ResponseWriter, r *http.Request) error {
+	// TODO: this 404 handling doesn't belong here
 	if r.URL.Path != "/" {
 		http.Redirect(w, r, "/404", http.StatusSeeOther)
 	}
 	log.Println("Processing get /index.html request.")
-	return templater.GenerateTemplate(w, "/index.html", data.Posts)
+	return templater.GenerateTemplate(w, "index", data.Posts)
 }
 
+// TODO: rewrite this, each post shouldn't be a template
 func (server *Server) handlePost(w http.ResponseWriter, r *http.Request) error {
-	slug := r.URL.Path[len("/post"):]
-	name := slug + ".html"
-	log.Println("Processing get", name, "request.")
-	return templater.GenerateTemplate(w, name, nil)
+	slug := r.URL.Path[len("/post/"):]
+	log.Println("Processing get", slug, "request.")
+	return templater.GenerateTemplate(w, slug, nil)
 }
